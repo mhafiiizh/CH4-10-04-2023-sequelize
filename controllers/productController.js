@@ -20,7 +20,7 @@ const getAllProducts = async (req, res) => {
 const getProductById = async (req, res) => {
   try {
     const id = req.params.id;
-    const product = await Product.findOne(id);
+    const product = await Product.findByPk(id);
     res.status(200).json({
       status: "success",
       data: {
